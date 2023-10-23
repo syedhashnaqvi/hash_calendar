@@ -1,0 +1,200 @@
+:root{
+    --theme-green: #1ec96b;
+    --theme-white: #fff;
+    --theme-light: #f5f5f5;
+    --theme-light-text:#808080;
+    --theme-dark:    #474747
+}
+.wrapper{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+  .wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+  }
+  header .icons{
+    display: flex;
+  }
+  .calendar-tools{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+  }
+  header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    line-height: 38px;
+    font-size: 1.9rem;
+    user-select: none;
+    border-radius: 50%;
+  }
+  .icons span:last-child{
+    margin-right: -10px;
+  }
+  header .icons span:hover{
+    background: #f2f2f2;
+  }
+  header .current-date{
+    font-size: 1.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  #selected_date{
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .tool-bar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .calendar{
+    padding: 20px;
+  }
+  .calendar .weeks,.calendar .days{
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+  }
+  .calendar .calendar-cell{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1rem;
+    border: 0.5px solid rgb(201, 201, 201);
+    display: inline-block;
+    text-align: center;
+    padding: 20px 2px;
+  }
+  .calendar .weeks .calendar-cell{
+    font-weight: 500;
+    cursor: default;
+    padding: 10px;
+    text-transform: uppercase;
+    color: var(--theme-light-text);
+  }
+  
+  .week-cell{
+    width: calc(100% / 8) !important;
+  }
+  .day-cell:nth-child(odd){
+    width: calc(100% / 6) !important;
+  }
+  .day-cell:nth-child(even) {
+    padding: 0;
+    width: calc(100% / 6 * 5) !important;
+  }
+
+  .calendar .weeks .calendar-cell,.calendar .days .calendar-cell {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+  }
+  .days .calendar-cell.inactive{
+    color: #aaa;
+  }
+  .days .calendar-cell.active .cell-date,.weeks .calendar-cell.active .cell-date{
+    background: var(--theme-green);
+    color: var(--theme-white);
+  }
+
+  .cell-date{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--theme-light);
+    color: var(--theme-dark);
+    /* font-weight: bold; */
+    margin: auto;
+  }
+
+  .cell-event {
+    background: #3ea603;
+    color: #fff;
+    font-size: 8pt;
+    padding: 3px;
+  }
+
+  .day-cell .cell-event {
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar-cell.holyday-cell {
+    background: #f5f5f5;
+  }
+
+  .cell-date.holyday-date {
+    background: #bdbdbd;
+    color: #f5f5f5;
+  }
+  .cell-event.more {
+    background: #eee !important;
+    color: #808080 !important;
+  }
+
+  #view_select{
+    word-wrap: normal;
+    border: 1px solid #d0d0d0;
+    background: white;
+    width: 100px;
+  }
+  .event-container{
+    margin-top: 5px;
+  }
+
+
+
+  /* Media quries */
+  /* Small screens (phones) */
+  @media (max-width: 767px) {
+    #selected_date,.current-date{
+      font-size: 0.9rem !important;
+    }
+    .calendar,.wrapper header,.calendar-tools{
+      padding: 5px;
+    }
+    .calendar .weeks .calendar-cell {
+      white-space: nowrap;      /* Prevent text from wrapping */
+      overflow: hidden;         /* Hide overflowing text */
+      text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+    }
+    .weeks .calendar-cell {
+      padding: 2px !important;
+      font-size: 0.8em !important;
+    }
+    .cell-event {
+      padding: 0 !important;
+      font-size: 0.65rem;
+      margin: 0 !important;
+    }
+  }
+
+  /* Medium screens (tablets) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Styles for medium screens here */
+  }
+
+  /* Large screens (desktops) */
+  @media (min-width: 992px) {
+    /* Styles for large screens here */
+  }
